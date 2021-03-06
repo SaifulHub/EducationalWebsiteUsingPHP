@@ -1,0 +1,528 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+.head{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    padding: 40px 0;
+    transition: all 0.5s ease;
+    z-index: 1;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background-color:purple;
+    
+}
+
+ .navbar .logo a{                              /*   brand name */
+    font-size: 45px;
+    font-weight: 600;
+    color: purple;
+}
+
+.navbar .head .logo a span{
+    color:black;
+}
+.navbar.sticky .head .logo a span{
+    color: white;
+}
+.navbar .head .logo .premium{       /* after login, user will see this premium button.*/
+    background: gold;
+    padding: 3px;
+    color: purple;
+    border-radius: 6px;
+}
+.navbar.sticky .head .logo a{
+    color: yellow;
+}
+
+
+
+
+
+.navbar .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .head .options{
+    margin-left: 210px;
+}
+
+
+.navbar .head .options a{
+    color: purple;
+    font-size: 19px;
+    font-weight: 600;
+    margin-left: 10px;
+    
+}
+.navbar.sticky .head .options a{
+    color: white;
+}
+
+.navbar .head .options a:hover{
+    color: yellow;
+    transition: 0.4s ease-in-out;
+}
+
+
+
+
+/* Menu button up right corner */
+    .menu-btn{
+        color:red;
+        cursor: pointer;
+        font-size: large;
+        display: none;
+    }
+
+
+/*Style for home section*/
+.home-section{
+    display: flex;
+    height: 100vh;
+    background: url("pencil1.jpg") no-repeat center center fixed;
+    color: purple;   
+}
+.home-section .home-content{
+    margin-left: 380px;
+    font-weight: 600;
+}
+.home-section .home-content .text1{
+    font-size: 25px;
+}
+.home-section .home-content .text2{
+    font-size: 40px;
+}
+.home-section .home-content .text3{
+    font-size: 25px;
+}
+.home-section .home-content .text3 span{
+    color:red;
+}
+
+
+/* Media query for making responsive */
+@media(max-width: 1280px){
+    .head{
+        padding: 0 50px;
+    }
+    /* menu button bringing font */
+    .menu-btn{
+        z-index: 1;
+        display: block;
+    }
+
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+                                                  /* toggle-menu */
+    .navbar .head .options{
+        background: black;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        padding-top: 80px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .head .options.active{
+        left: 0;
+        text-align: center;
+    }
+
+
+    .navbar .head .options a{                      /* options placement */
+        display: block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home-section .home-content{
+        margin-left: 0px;
+    }
+}
+
+@media(max-width:1260px){
+    .home-section .home-content .text1{
+        font-size: 20px;
+    }
+    .home-section .home-content .text2{
+        font-size: 40px;
+    }
+    .home-section .home-content .text3{
+        font-size: 20px;
+    }
+    .navbar .head .options{
+        background: black;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -120%;
+        top: 0;
+        padding-top: 80px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .head .options.active{
+        left: -10%;
+    }
+    .about .head .about-content .clmn-left img{
+        height: 280px;
+        width: 280px;
+    }
+}
+
+@media(max-width:1080px){
+    .home-section .home-content .text1{
+        font-size: 15px;
+    }
+    .home-section .home-content .text2{
+        font-size: 30px;
+    }
+    .home-section .home-content .text3{
+        font-size: 15px;
+    }
+
+    .navbar .head .options{
+        background: black;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -130%;
+        top: 0;
+        padding-top: 80px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .head .options.active{
+        left: -30%;
+    }
+    .about .head .about-content .clmn-left img{
+        height: 240px;
+        width: 240px;
+        object-fit: cover;
+    }
+    .about .head .about-content .clmn-left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .head .about-content .clmn-right{
+        flex: 100%;
+    }
+}
+
+@media(max-width:720px){
+    .home-section .home-content .text2{
+        font-size: 25px;
+    }
+    .navbar .head .options{
+        background: black;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -145%;
+        top: 0;
+        padding-top: 80px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    .navbar .head .options.active{
+        left: -43%;
+    }
+    .about .head .about-content .clmn-left img{
+        height: 180px;
+        width: 180px;
+    }
+    .contact .head .contact-content .clmn-left{          /* contact section responsiveness*/
+        justify-content: center;
+        margin: auto;
+    }
+    .contact .head .contact-content .clmn-right{
+        flex: 100%;
+    }
+}
+
+/* why this website section styling */
+section{
+    padding: 100px 0;
+}
+
+.about{
+    background: linear-gradient(rgb(203, 217, 228),white);
+}
+
+.lessons{
+    background: url("pencil1.jpg") no-repeat center center fixed;;
+}
+
+.lessons .head .title{
+    position: relative;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    background: rgba(226, 55, 241, 0.5);
+    padding:30px;
+}
+.lessons .head .title .options a{
+    display:block;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 30px;
+    box-shadow: 0 10px 15px lightgray;
+    padding: 0 10px;
+}
+.lessons .head .title .options a:hover{
+    color: yellow;
+    transition: 0.3s ease;
+}
+
+
+
+.about .head .title{
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+
+.about .head .title::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 8px;
+    bottom: 0px;
+    left: 50%;
+    background: black;
+    transform: translateX(-50%);
+}
+
+.about .head .title::after{
+    content: "Reason to Visit";
+    position: absolute;
+    padding: 2px;
+    font-size: 15px;
+    color: red;
+    background: rgb(209, 222, 231);
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.about .about-content .clmn-left{
+    width: 40%;
+}
+.about .about-content .clmn-right{
+    width: 60%;
+}
+
+.about .about-content .clmn-left img{
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+}
+.about .about-content .clmn-right p{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: justify;
+}
+/* Contact sectio  styling */
+.contact .head .title{
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+}
+
+.contact .head .title::before{
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 8px;
+    bottom: 0px;
+    left: 50%;
+    background: black;
+    transform: translateX(-50%);
+}
+.contact .head .title::after{
+    content: "if you need";
+    position: absolute;
+    padding: 2px;
+    font-size: 15px;
+    color: red;
+    background: rgb(255, 255, 255);
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* Contact Section styling */
+.contact .head .contact-content .clmn-left .txt{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.contact .head .contact-content .clmn-left{
+    width: 50%;
+}
+.contact .head .contact-content .clmn-left p{
+    text-align: justify;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    
+}
+.contact .head .contact-content .clmn-left .icons{
+    margin: 10px 0;
+}
+.contact .head .contact-content .clmn-left .row{
+    align-items: center;
+    height: 65px;
+    display: flex;
+}
+.contact .head .contact-content .clmn-left .row .info{
+    margin-left: 20px;
+}
+.contact .head .contact-content .clmn-left .row .info .header{
+    font-weight: 600;
+    font-size: 17px;
+}
+.contact .head .contact-content .clmn-left .row i{
+    color: purple;
+    padding: 14px 14px;
+    border: 2px solid purple;
+    border-radius: 50px;
+}
+.contact .head .contact-content .clmn-right{
+    width: 50%;
+    padding-left: 80px;
+    border-left: 1px solid lightgray;
+}
+
+.contact .head .contact-content .clmn-right .txt{
+    /* style= "padding:10px; margin-left:10px" */
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact .head .contact-content .clmn-right form .field-comment textarea {
+    height: 80px;
+    width: 80%;
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    resize: none;
+}
+
+.contact .head .contact-content .clmn-right form .button button{
+    height: 35px;
+    width: 80px;
+    font-size: 15px;
+}
+
+.scrollup{
+    height: 45px;
+    width: 45px;
+    position: fixed;
+    background:purple;
+    text-align: center;
+    right: 30px;
+    bottom: 10px;
+    font-size: 30px;
+    border-radius: 30px;
+    z-index: 9999;
+    cursor: pointer;
+    line-height: 45px;
+    color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+}
+.scrollup.show{
+    pointer-events: auto;
+    opacity: 1;
+    bottom: 30px;
+}
+
+.comments .single-item{
+    margin-top: 30px;
+    box-shadow: 0 0 10px lightgray;
+    padding: 0 10px;
+    text-align: left;
+    display: block;
+}
+
+                              /* video pages styling */
+.video .video-title{
+    margin: 40px;
+    text-align: center;
+}  
+
+.video .video-title .video-content{
+    margin: 40px;
+    text-align: center;
+}           
+.notice .notice-content{
+    margin: 40px;
+    background: rgb(255, 184, 255);
+}                         
+
+
+
+
+
+
+/* footer section styling */
+footer{
+    background: rgba(0, 0, 0, 0.493);
+    padding: 20px 23px;
+    color: white;
+}
+footer span a{
+    color: yellow;
+
+    text-align: center;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
